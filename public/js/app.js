@@ -1,14 +1,6 @@
-console.log('client side js file is loaded!');
-
-
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
-// const messageOne = document.querySelector('#mesage-1');
-// const messageTwo = document.querySelector('#mesage-2');
 const messageOne = document.getElementById('message-1');
-// const messageTwo = document.getElementById('message-2');
-// const cityName = document.querySelector('#cityName');
 const cityName = document.getElementById('cityName');
 const country = document.getElementById('country');
 const timeIMG = document.getElementById('time');
@@ -20,19 +12,15 @@ const feelslike = document.getElementById('feelslike');
 const humidity = document.getElementById('humidity');
 const weatherCard = document.getElementById('card');
 const loader = document.getElementById('loader');
-// const temp = document.getElementById('temp');
-// messageOne.textContent = 'from js';
+
 
 weatherForm.addEventListener('submit', (event) => {
     loader.classList.add('d-flex');
     event.preventDefault();
     const location = search.value;
-    // messageOne.textContent = 'Loading...';
     if (weatherCard.classList.contains('d-none')) {}
     else {weatherCard.classList.add('d-none')}
-// messageTwo.textContent = '';
 
-    // console.log(location);
 
     fetch(`http://localhost:3000/weather?address=${location}`).then((Response) => {
         Response.json().then((data) => {
